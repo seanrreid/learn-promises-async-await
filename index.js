@@ -17,21 +17,16 @@ const willSeanGoToWDW = new Promise(
 )
 
 // Promise 2
-async function letsGo(parks) {
+const letsGo = async (parks) => {
     const message = `Sean is going to ${parks.first} and then ${parks.second}!!`;
-    return Promise.resolve(message);
+    return message;
 };
 
 // call our promise chain...
-async function askSean() {
-    try {
-        const goingToDisney = await willSeanGoToWDW;
-        const message = await letsGo(goingToDisney);
-        console.log(message);
-    }
-    catch(error) {
-        console.log(error.message);
-    }
+const askSean = async () => {
+    const goingToDisney = await willSeanGoToWDW;
+    const message = await letsGo(goingToDisney);
+    console.log(message);
 };
 
 askSean();
