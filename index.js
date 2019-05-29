@@ -1,6 +1,6 @@
 // Promises: https://javascript.info/promise-basics
 
-const isVacation = true;
+const isVacation = false;
 
 // Promises have the following static methods:
 // Promise.resolve -> The promise has resolved, returns a value
@@ -32,8 +32,8 @@ const willSeanGoToWDW = new Promise(
 
 const askSean = () => {
     willSeanGoToWDW
-    .then(fullfilled => {
-        console.log(fullfilled, 'Yep!')
+    .then(fulfilled => {
+        console.log(fulfilled, 'Yep!')
     })
     .catch(error => {
         // Nope, can't go
@@ -43,7 +43,7 @@ const askSean = () => {
 
 // Chaining promises: 
 // Promise 2
-const letsGo = function (parks) {
+const letsGo = parks => {
     const message = `Sean is going to ${parks.first} and then ${parks.second}!!`;
     return Promise.resolve(message);
 };
@@ -56,5 +56,5 @@ const askSeanAgain = () => {
     .catch(error => console.log(error.message));
 };
 
-askSean();
+//askSean();
 askSeanAgain();
